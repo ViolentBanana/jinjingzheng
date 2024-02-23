@@ -1,4 +1,7 @@
-const API = "URL地址自行抓包" + "/pro/applyRecordController/stateList"
+// Variables used by Scriptable.
+// These must be at the very top of the file. Do not edit.
+// icon-color: teal; icon-glyph: magic;
+const API = "自行抓取" + "/pro/applyRecordController/stateList"
 let data = await getData(API)
 let widget = await createWidget(data)
 
@@ -29,7 +32,7 @@ async function createWidget(data) {
     TypeStack.layoutVertically()
     const TypeStatusLabel = TypeStack.addText(data.data.bzclxx[0].bzxx[0].jjzzlmc)
     TypeStatusLabel.font = Font.semiboldSystemFont(20)
-    TypeStatusLabel.textColor = Color.white()
+    TypeStatusLabel.textColor = Color.black()
     TypeStack.addSpacer(15)
 
     let PeriodValidityStack = column0.addStack()
@@ -43,7 +46,7 @@ async function createWidget(data) {
     StateStack.layoutVertically()
     const StateLable = StateStack.addText(data.data.bzclxx[0].bzxx[0].blztmc)
     StateLable.font = Font.boldRoundedSystemFont(13)
-    StateLable.textColor = Color.gray()
+    StateLable.textColor = Color.green()
     StateStack.addSpacer(5)
 
     let ApplicationDateStack = column0.addStack()
@@ -54,7 +57,7 @@ async function createWidget(data) {
 
     let PlateNumStack = column0.addStack()
     PlateNumStack.layoutVertically()
-    PlateNumStack.backgroundColor = Color.gray()
+    // PlateNumStack.backgroundColor = Color.gray()
     const PlateNumStatusLabel = PlateNumStack.addText("车牌号: " + data.data.bzclxx[0].hphm)
     PlateNumStatusLabel.font = Font.regularSystemFont(13)
 
